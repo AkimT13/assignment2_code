@@ -22,9 +22,9 @@ Instagram340::~Instagram340(){
 		User* user = curr->getItem();
 		delete user;
 
-		Node<User*>* nodeToDelete = curr;
+		
 		curr = curr->getNext();
-		delete nodeToDelete;
+		
 
 	}
 	delete users;

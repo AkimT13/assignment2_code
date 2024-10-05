@@ -136,13 +136,19 @@ void displayUserManu(User* user){
 			}
 			case 0: {
 				cout << "Logging you out." << endl;
+
+				
+				
 				break;
 			}
 			default:
 				cout << "Invalid choice. Please try again." << endl;
+				break;
+				
 		}
 
 	} while (userChoice != 0);
+	
 	return;
 }
 

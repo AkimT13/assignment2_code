@@ -19,13 +19,13 @@ User::~User(){
 		Post* post = curr->getItem();
 		delete post;
 
-		Node<Post*>* nodeToDelete = curr;  
+		
         curr = curr->getNext();  
-        delete nodeToDelete; 
+        
 
 	}
 
-	posts->clear();
+	
 	delete posts;
 
 
