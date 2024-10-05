@@ -1,12 +1,37 @@
-// TO DO: #include all the standard libraries and your own libraries here
 
+#ifndef POST_H
+#define POST_H
+// TO DO: #include all the standard libraries and your own libraries here
+#include <iostream>
+#include <string>
+#include <chrono>
 // To DO: define the class Post with the necessary functions' prototypes and data fields
 
-// This is a function that allows you to compare two posts based on their title. 
-// You may directly include it in your class definition. 
-// You don't need to modify it but will have to put it inside your class. 
-// Operator overloading function prototype:
-bool operator==(const Post& otherPost) const; 
+class Post{
+    protected:
+        std::string title;
+        std::chrono::steady_clock::time_point time_stamp;
+        int likes;
+        std::string URL;
 
-// This is a helper function -- it should be private.
-int computeTimeToExpiration() const;
+    public:
+        
+       Post(std::string title, std::string URL);
+       bool operator==(const Post& otherPost) const;
+       
+       void modify(std::string newTitle);
+       virtual void display() const = 0;
+       virtual void edit();
+       
+       virtual ~Post();
+       
+
+
+
+};
+
+
+
+
+#endif
+

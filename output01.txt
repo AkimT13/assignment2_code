@@ -1,0 +1,5 @@
+["Displayed profile correctly without password" , "Modified password", "Created a Reel","Created a story", 
+"created reel","created story","created reel", "displayed all posts relevent info", "displayed the 0 indexed kth post"
+"Changed the kth posts title", "displayed kth post again to verify title change", 
+"deleted kth post","displayed all posts to verfify deletion","edited reel to see message",
+"edited story to see apropriate message", "quit program" ]

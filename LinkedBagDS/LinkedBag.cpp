@@ -12,8 +12,35 @@
 // TO DO: implement the two functions here
 
 template <class ItemType>
-bool append(const ItemType &newEntry)
+bool LinkedBag<ItemType>::append(const ItemType &newEntry)
 {
+	Node<ItemType>* curr = headPtr;
+	Node<ItemType>* prev = nullptr;
+
+	if (curr == nullptr) {
+        headPtr = new Node<ItemType>(newEntry);
+        return true;
+    }
+
+	while(curr!=nullptr){
+		prev = curr;
+		curr = curr->getNext();
+	}
+	
+	prev->setNext(new Node<ItemType>(newEntry));
+	itemCount++;
+	return true;
+}
+template <class ItemType>
+Node<ItemType>* LinkedBag<ItemType>::findKthItem(const int& k) const{
+
+	int count = 0;
+	Node<ItemType>* curr = headPtr;
+	while((curr!=nullptr) && (count<k)){
+		curr = curr->getNext();
+		count++;
+	}
+	return curr;
 	
 }
 
@@ -69,6 +96,16 @@ LinkedBag<ItemType>::~LinkedBag()
 {
 	clear();
 } // end destructor
+
+template <class ItemType>
+Node<ItemType>* LinkedBag<ItemType>::getHead() const{
+	return headPtr;
+}
+template <class ItemType>
+void LinkedBag<ItemType>::setHead(Node<ItemType>* newHead){
+
+	headPtr = newHead;
+}
 
 template <class ItemType>
 bool LinkedBag<ItemType>::isEmpty() const
@@ -155,6 +192,7 @@ void LinkedBag<ItemType>::clear()
 
 	itemCount = 0;
 } // end clear
+
 
 template <class ItemType>
 int LinkedBag<ItemType>::getFrequencyOf(const ItemType &anEntry) const

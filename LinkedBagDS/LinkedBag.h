@@ -39,6 +39,8 @@ public:
 	void clear();
 	bool contains(const ItemType& anEntry) const;
 	int getFrequencyOf(const ItemType& anEntry) const;
+	Node<ItemType>* getHead() const;
+	void setHead(Node<ItemType>* newHead);
 	std::vector<ItemType> toVector() const;
 
 
